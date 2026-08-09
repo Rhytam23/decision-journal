@@ -49,10 +49,10 @@ export default function Page() {
       <div className="min-h-screen bg-app-bg flex flex-col justify-between relative overflow-hidden select-none">
         
         {/* Subtle top-ambient background glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-[radial-gradient(circle_at_top,rgba(207,168,107,0.08)_0%,transparent_60%)] pointer-events-none z-0" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[450px] bg-[radial-gradient(circle_at_top,rgba(207,168,107,0.06)_0%,transparent_60%)] pointer-events-none z-0" />
 
         {/* Header */}
-        <header className="sticky top-0 z-50 border-b border-border bg-app-bg/85 backdrop-blur-md px-4 sm:px-6 py-4">
+        <header className="sticky top-0 z-50 border-b border-border bg-app-bg/85 backdrop-blur-md px-4 sm:px-6 py-3.5">
           <div className="max-w-5xl mx-auto flex items-center justify-between">
             <div className="flex items-center gap-2.5">
               <div className="w-7 h-7 rounded-lg border border-gold-border bg-gold-subtle flex items-center justify-center text-gold text-xs font-heading font-bold">
@@ -69,28 +69,28 @@ export default function Page() {
         </header>
 
         {/* Hero & Case File Mockup */}
-        <main className="flex-1 max-w-5xl mx-auto w-full px-4 sm:px-6 py-12 sm:py-20 z-10 flex flex-col gap-16 sm:gap-24">
+        <main className="flex-1 max-w-5xl mx-auto w-full px-4 sm:px-6 py-6 sm:py-12 lg:py-14 z-10 flex flex-col gap-16 sm:gap-20 justify-center">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Left Column: Heading */}
             <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
-              <span className="inline-flex px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-gold bg-gold-subtle border border-gold-border/40 mb-6">
+              <span className="inline-flex px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-widest text-gold bg-gold-subtle border border-gold-border/40 mb-5">
                 Cognitive Calibration Hub
               </span>
               
-              <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink-primary leading-[1.1] mb-6">
+              <h1 className="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] xl:text-[3.25rem] font-bold tracking-tight text-ink-primary leading-[1.12] mb-5">
                 Get better at making decisions by checking your{' '}
                 <span className="text-gold font-serif italic font-normal">predictions</span> against{' '}
                 <span className="text-gold font-serif italic font-normal">reality</span>.
               </h1>
               
-              <p className="text-sm sm:text-base text-ink-secondary leading-relaxed max-w-lg mb-10">
+              <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed max-w-lg mb-6 sm:mb-8">
                 Decision Journal is a serious personal decision-intelligence tool designed to optimize judgment. 
                 Commit your thoughts, assumptions, and confidence levels before reality changes what you believed.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
                 <Link href="/auth/login" className="w-full sm:w-auto">
                   <Button size="lg" className="w-full">Start your journal →</Button>
                 </Link>
