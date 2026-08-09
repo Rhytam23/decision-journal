@@ -24,8 +24,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setLoading(false)
 
       const isAuthRoute = pathname.startsWith('/auth/')
+      const isPublicRoute = pathname === '/' || isAuthRoute
       
-      if (!currentUser && !isAuthRoute) {
+      if (!currentUser && !isPublicRoute) {
         router.push('/auth/login')
       } else if (currentUser && isAuthRoute) {
         router.push('/')
