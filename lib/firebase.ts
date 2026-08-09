@@ -1,5 +1,5 @@
 import { initializeApp, getApps, getApp } from 'firebase/app'
-import { getAuth } from 'firebase/auth'
+import { initializeAuth, browserLocalPersistence, indexedDBLocalPersistence } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
@@ -12,8 +12,13 @@ const firebaseConfig = {
 }
 
 // Initialize Firebase (singleton pattern for SSR)
-const app   = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp()
-const auth  = getAuth(app)
-const db    = getFirestore(app)
+const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp()
+
+// Safely initialize Auth with localStorage fallback to avoid IndexedDB locking errors in some browsers
+const auth = initializeAuth(app, {
+  persistence: [indexedDBLocalPersistence, browserLocalPersistence]
+})
+
+const db = getFirestore(app)
 
 export { app, auth, db }
